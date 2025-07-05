@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Input Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+    .form-container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #007BFF;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 1.2rem;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Enter Data for Prediction</h2>
+    <form action="{{ url_for('predict_datapoint') }}" method="POST">
+      
+      <div class="form-group">
+        <label for="Temperature">Temperature</label>
+        <input type="text" name="Temperature" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="RH">RH</label>
+        <input type="text" name="RH" required>
+      </div>
+
+      <div class="form-group">
+        <label for="Ws">Ws</label>
+        <input type="text" name="Ws" required>
+      </div>
+
+      <div class="form-group">
+        <label for="Rain">Rain</label>
+        <input type="text" name="Rain" required>
+      </div>
+
+      <div class="form-group">
+        <label for="FFMC">FFMC</label>
+        <input type="text" name="FFMC" required>
+      </div>
+
+      <div class="form-group">
+        <label for="DMC">DMC</label>
+        <input type="text" name="DMC" required>
+      </div>
+
+      <div class="form-group">
+        <label for="ISI">ISI</label>
+        <input type="text" name="ISI" required>
+      </div>
+
+      <div class="form-group">
+        <label for="Classes">Classes</label>
+        <input type="text" name="Classes" required>
+      </div>
+
+      <div class="form-group">
+        <label for="Region">Region</label>
+        <input type="text" name="Region" required>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    {% if results %}
+      <div class="result">
+        Predicted Output: {{ results }}
+      </div>
+    {% endif %}
+
+  </div>
+
+</body>
+</html>

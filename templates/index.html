@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to My Prediction Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #0056b3;
+      padding: 0.5rem 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, #74ebd5, #acb6e5);
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .hero a {
+      background-color: #007BFF;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero a:hover {
+      background-color: #0056b3;
+    }
+    .about {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .about h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #007BFF;
+    }
+    .about p {
+      font-size: 1rem;
+      text-align: justify;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Prediction Web App</h1>
+  </header>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="{{ url_for('predict_datapoint') }}">Prediction</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Welcome to the Prediction Web App</h1>
+    <p>Submit your data to predict outcomes using a trained ML model.</p>
+    <a href="{{ url_for('predict_datapoint') }}">Start Prediction</a>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About</h2>
+    <p>
+      This is a simple machine learning prediction web application built using Flask. You can enter values for features like temperature, humidity, wind speed, and more, and get the model's prediction based on your input.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Prediction Web App | Created by Sudhanshu</p>
+  </footer>
+
+</body>
+</html>
